@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\RecruitmentApp.csproj": {}
+    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {}
   },
   "projects": {
-    "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\RecruitmentApp.csproj": {
+    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\RecruitmentApp.csproj",
+        "projectUniqueName": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
         "projectName": "RecruitmentApp",
-        "projectPath": "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\RecruitmentApp.csproj",
+        "projectPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\obj\\",
+        "outputPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",

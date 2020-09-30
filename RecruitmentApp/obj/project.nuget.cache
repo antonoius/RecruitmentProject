@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g8CtrSqShzihr2Zi+8W9Qwh0PRDMFkyAAef+uP0Osx+kSUM+mCsKT5pAcJwbqcpSg/MFzLSfR/Z4ZxM7o7UfDQ==",
+  "dgSpecHash": "ICx/h85m12Zex6eu0XBW3D06d4bElbxH8vOcNPWwvcxrVPRTyICzGVXgFx6ZAfXJYf1HFAETNGf26idQ33PiPg==",
   "success": true,
-  "projectFilePath": "E:\\Internship\\Project\\RecruitmentApp\\RecruitmentApp\\RecruitmentApp.csproj",
+  "projectFilePath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
