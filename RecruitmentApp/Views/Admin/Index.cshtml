@@ -1,0 +1,370 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/Ziad/Desktop/New%20folder/Jobs.html -->
+<html lang="en" style="height: auto;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Top Navigation</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+
+    <script>
+
+        $(function () {
+            // we assume that the departments names is unique 'no repetaion in names'
+
+            var totalRecords = 0;
+            var mp = new Map(); // is used to get the id when we know the departmentName
+
+
+            // Read from api
+            $.ajax({
+                type: "get",
+                url: "http://sharpacademy-001-site1.htempurl.com/api/department",
+                success: function (res) {
+                    $.each(res, function (idx, obj) {
+                        $("tbody").append('<tr> <td>' + obj.departmentName + '</td> <td> <input type="button" value="Edit" class="edt"> </td> <td> <input type="button" value="delete" class="del"> </td> </tr>');
+                        mp.set(obj.departmentName, obj.id);
+                    });
+                    $("tfoot").replaceWith('<tfoot> <tr><td colspan="3">Count of Records is : ' + res.length + ' </td></tr> </tfoot>');
+                    totalRecords = res.length;
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Add
+            $("#btn").click(function () {
+                var depName = $("#txt1").val();
+                var obj = { "departmentName": depName };
+                $.ajax({
+                    type: "post",
+                    data: JSON.stringify(obj),
+                    contentType: "application/json",
+                    url: "http://sharpacademy-001-site1.htempurl.com/api/department",
+                    success: function (res) {
+                        mp.set(depName, res.id);
+                        $("tbody").append('<tr> <td>' + depName + '</td> <td> <input type="button" value="Edit" class="edt"> </td> <td> <input type="button" value="delete" class="del"> </td> </tr>');
+                        ++totalRecords;
+                        $("tfoot").replaceWith('<tfoot> <tr><td colspan="3">Count of Records is : ' + totalRecords + ' </td></tr> </tfoot>');
+                    }
+                });
+            });
+
+
+
+            // Delete
+            $("tbody").on("click", ".del", function () {
+                var depName = $(this).parent().prev().prev().text();
+                var depId = mp.get(depName);
+                var ptr = $(this).parent().parent();
+                $.ajax({
+                    type: "delete",
+                    url: "http://sharpacademy-001-site1.htempurl.com/api/department/" + depId,
+                    success: function (res) {
+                        ptr.remove();
+                        --totalRecords;
+                        $("tfoot").replaceWith('<tfoot> <tr><td colspan="3">Count of Records is : ' + totalRecords + ' </td></tr> </tfoot>');
+                        mp.delete(depName);
+                    }
+                });
+
+            });
+
+
+
+            // Delete 222222222222
+            $("tbody").on("click", ".del", function () {
+                var depName = $(this).parent().prev().prev().text();
+                var depId = mp.get(depName);
+                var ptr = $(this).parent().parent();
+                $.ajax({
+                    type: "delete",
+                    url: "http://sharpacademy-001-site1.htempurl.com/api/department/" + depId,
+                    success: function (res) {
+                        ptr.remove();
+                        --totalRecords;
+                        $("tfoot").replaceWith('<tfoot> <tr><td colspan="3">Count of Records is : ' + totalRecords + ' </td></tr> </tfoot>');
+                        mp.delete(depName);
+                    }
+                });
+
+            });
+
+
+
+
+
+
+            // Update
+            var depNameBeforeEdit;
+            $("tbody").on("click", ".edt", function () {
+                var depName = $(this).parent().prev().text();
+                depNameBeforeEdit = depName;
+                $(this).parent().prev().replaceWith('<td> <input type="text" value="' + depName + '"> </td> ');
+                $(this).replaceWith('<input type="button" value="Save" class="save">');
+            });
+
+
+            // Save
+            $("tbody").on("click", ".save", function () {
+                var depName = $(this).parent().prev().find("input").val();
+                var depId = mp.get(depNameBeforeEdit);
+                var ptr = $(this).parent().parent();
+                var obj = { "id": depId, "departmentName": depName };
+                $.ajax({
+                    type: "put",
+                    data: JSON.stringify(obj),
+                    contentType: "application/json",
+                    url: "http://sharpacademy-001-site1.htempurl.com/api/department",
+                    success: function (res) {
+                        ptr.replaceWith('<tr> <td>' + depName + '</td> <td> <input type="button" value="Edit" class="edt"> </td> <td> <input type="button" value="delete" class="del"> </td> </tr>');
+                        mp.delete(depNameBeforeEdit);
+                        mp.set(depName, depId);
+                    }
+                });
+            });
+
+
+
+        });
+
+    </script>
+
+
+
+
+
+</head>
+<body class="layout-top-nav" style="height: auto;">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+            <div class="container">
+
+                <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+                    <!-- Left navbar links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="~/Admin/HRDirectorCreation" class="nav-link">Add HR Director</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="~/Admin/CompanyCreation" class="nav-link">Add Company</a>
+                        </li>
+                    </ul>
+                       
+                </div>
+
+                <!-- Right navbar links -->
+
+            </div>
+        </nav>
+        <!-- /.navbar -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="min-height: 665px;">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Admin Page</h1>
+                        </div><!-- /.col -->
+                        <!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Companies</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="card-body p-0" style="display: block;">
+                        <table class="table table-striped projects">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%">
+                                        #
+                                    </th>
+                                    <th style="width: 70%">
+                                        Company Name
+                                    </th>
+                                    <th style="width: 20%">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody1">
+
+                                @inject RecruitmentApp.Repository.ICompanyRepo compRep
+
+                                @foreach (var comp in compRep.GetAllCompanies())
+                                {
+                                    <tr>
+                                        <td>
+                                            #
+                                        </td>
+                                        <td>
+                                            <a>@comp.CompanyName</a>
+                                        </td>
+                                        <td class="project-actions text-right">
+                                            <a class="btn btn-primary btn-sm dep" href="#">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                Departments
+                                            </a>
+                                            <a class="btn btn-info btn-sm edt" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </a>
+                                            <a class="btn btn-danger btn-sm del" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
+                <!-- Default box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Hr Directors</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="card-body p-0" style="display: block;">
+                        <table class="table table-striped projects">
+                            <thead>
+                                <tr>
+                                    <th style="width: 1%">
+                                        #
+                                    </th>
+                                    <th style="width: 70%">
+                                        HR Director Name
+                                    </th>
+                                    <th style="width: 20%">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @inject RecruitmentApp.Repository.IEmployeeRepo empRep
+
+                                @foreach (var item in empRep.GetAllHRDirectors())
+                                {
+
+                                    <tr>
+                                        <td>
+                                            #
+                                        </td>
+                                        <td>
+                                            <a>
+                                                @item.Name
+                                            </a>
+                                        </td>
+
+                                        <td class="project-actions text-right">
+                                            <a class="btn btn-primary btn-sm" href="#">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                View
+                                            </a>
+                                            <a class="btn btn-info btn-sm" href="#">
+                                                <i class="fas fa-pencil-alt">
+                                                </i>
+                                                Edit
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="#">
+                                                <i class="fas fa-trash">
+                                                </i>
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+
+
+
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Control Sidebar -->
+        <!-- /.control-sidebar -->
+        <!-- Main Footer -->
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/dist/js/demo.js"></script>
+
+
+</body>
+</html>
