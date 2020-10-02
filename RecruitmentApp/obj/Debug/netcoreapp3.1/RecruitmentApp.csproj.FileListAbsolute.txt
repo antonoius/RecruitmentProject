@@ -424,3 +424,6 @@ E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DepartmentsDisplay.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DepartmentCreation.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\Index.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\UpdateCandidateInfo.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\ViewApplications.cshtml.g.cs

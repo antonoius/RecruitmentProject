@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RecruitmentApp.Models;
 using RecruitmentApp.Repository;
@@ -37,13 +38,15 @@ namespace RecruitmentApp.Controllers
             }
             else if (emp != null)
             {
+                HttpContext.Session.SetInt32("uid", emp.Id);
                 if (emp.EmployeeTypeId == 1) return RedirectToAction("Index", "Admin"); // admin page
                 else if (emp.EmployeeTypeId == 2) return RedirectToAction(""); // HR director page
                 else return RedirectToAction(""); // recruiter page
             }
             else
             {
-                return RedirectToAction(""); // candidate page
+                HttpContext.Session.SetInt32("uid", cand.Id);
+                return RedirectToAction("Index", "Candidate"); // candidate page
             }
 
         }

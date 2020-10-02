@@ -99,6 +99,23 @@ namespace RecruitmentApp.Repository
             }
         }
 
-       
+        public bool ApplicatonChecker(int candidateId, int jobId)
+        {
+            var app = db.Applications.SingleOrDefault(a => a.CandidateId == candidateId && a.JobId == jobId);
+            if (app == default(Op_Application)) return false;
+            else return true;
+        }
+
+        public string GetApplicationStatusName(int statusId)
+        {
+            var status = db.ApplicationStatuses.SingleOrDefault(a => a.Id == statusId);
+            return status.StatusName;
+        }
+
+        public string GetPhaseName(int PhaseId)
+        {
+            var phase = db.Phases.SingleOrDefault(a => a.Id == PhaseId);
+            return phase.Name;
+        }
     }
 }

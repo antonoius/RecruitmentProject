@@ -18,7 +18,10 @@ namespace RecruitmentApp.Repository
 
         IEnumerable<Op_Application> GetCompanyRunningApplications(int companyId);
 
-        //IEnumerable<Op_Application> GetCandidateApplications(string email, string phone, string linkedInAccount);
+        bool ApplicatonChecker(int candidateId, int jobId);
 
+        string GetApplicationStatusName(int statusId);
+
+        string GetPhaseName(int PhaseId);
     }
 }

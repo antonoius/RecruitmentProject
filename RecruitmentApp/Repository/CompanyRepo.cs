@@ -89,5 +89,10 @@ namespace RecruitmentApp.Repository
 
         }
 
+        public string GetCompanyName(int companyId)
+        {
+            var comp = db.Companies.SingleOrDefault(a => a.Id == companyId);
+            return comp.CompanyName;
+        }
     }
 }

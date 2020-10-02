@@ -63,9 +63,60 @@ namespace RecruitmentApp.Repository
             }
         }
 
+        public bool EditCandidate(int id, string Name, string Email, string Password, string UniversityName, string Major, int GraduationYear, string Phone, string LinkedIn, string Address)
+        {
+            try
+            {
+                var oldData = db.Candidates.SingleOrDefault(a => a.Id == id);
+                if (!(String.IsNullOrWhiteSpace(Name)))
+                    oldData.Name = Name;
+                if (!(String.IsNullOrWhiteSpace(Email)))
+                    oldData.Email = Email;
+                if (!(String.IsNullOrWhiteSpace(Password)))
+                    oldData.Password = Password;
+                if (!(String.IsNullOrWhiteSpace(UniversityName)))
+                    oldData.UniversityName = UniversityName;
+                if (!(String.IsNullOrWhiteSpace(Major)))
+                    oldData.UniversityMajor = Major;
+                if (!(String.IsNullOrWhiteSpace(GraduationYear.ToString())))
+                    oldData.GraduationYear = GraduationYear;
+                if (!(String.IsNullOrWhiteSpace(Phone)))
+                    oldData.Phone = Phone;
+                if (!(String.IsNullOrWhiteSpace(LinkedIn)))
+                    oldData.LinkedInAccount = LinkedIn;
+                if (!(String.IsNullOrWhiteSpace(Address)))
+                    oldData.Address = Address;
+
+
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public Op_Candidates GetCandidate(int candidateId)
+        {
+            return db.Candidates.SingleOrDefault(a => a.Id == candidateId);
+        }
+
         public IEnumerable<Op_Application> GetCandidateApplications(Op_Candidates candidate)
         {
             return db.Applications.Where(a => a.CandidateId == candidate.Id);
+        }
+
+        public IEnumerable<Op_Application> GetCandidateApplications(int candidateId)
+        {
+            return db.Applications.Where(a => a.CandidateId == candidateId);
+        }
+
+        public string GetCandidateName(int candidateId)
+        {
+            var cand = db.Candidates.SingleOrDefault(a => a.Id == candidateId);
+            return cand.Name;
         }
     }
 }

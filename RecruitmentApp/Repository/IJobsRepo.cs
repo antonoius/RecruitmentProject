@@ -15,6 +15,12 @@ namespace RecruitmentApp.Repository
         
         bool DeleteJob(Op_Jobs job);
 
+        string GetJobName(int jobId);
+
+        string GetJobDescription(int jobId);
+
+        IEnumerable<Op_Jobs> GetAllJobs();
+
 
     }
 }
