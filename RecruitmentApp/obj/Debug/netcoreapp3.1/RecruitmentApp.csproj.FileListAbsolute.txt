@@ -427,3 +427,13 @@ E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\Index.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\UpdateCandidateInfo.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Candidate\ViewApplications.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Signup.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\AddEmp.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\EditEmp.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\FindCandidate.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\FindEmployees.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\Home.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\RecruiterOperations\ViewApplication.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
