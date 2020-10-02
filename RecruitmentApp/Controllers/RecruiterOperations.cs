@@ -111,6 +111,20 @@ namespace RecruitmentApp.Controllers
                         });
             return Json(data);
         }
+        public JsonResult getAllCandData()
+        {
+            var data = (from cand in _context.Candidates
+                        select new
+                        {
+                            candId = cand.Id,
+                            candName = cand.Name,
+                            candPhone = cand.Phone,
+                            candEmail = cand.Email,
+                            candLinkedIn = cand.LinkedInAccount
+
+                        });
+            return Json(data);
+        }
 
         public IActionResult ViewApplication(int candId)
         {
@@ -152,6 +166,7 @@ namespace RecruitmentApp.Controllers
                 phComm.Comment = phaseComment;
 
                 _context.ApplicationPhaseComments.Add(phComm);
+                _context.Applications.Where(a => a.Id == appId).FirstOrDefault().CurrentPhaseId = phaseId;
                 _context.SaveChanges();
                 return "Phase has been added";
 

@@ -22,7 +22,7 @@
                 var searchWord = $('#SearchWord').val();
                 
                 $.ajax({
-                    url: 'https://localhost:44386/RecruiterOperations/getEmpData?searchWord=' + searchWord,
+                    url: '/RecruiterOperations/getEmpData?searchWord=' + searchWord,
                     success: function (result) {                    
                         $.each($(result), function (i, elem) {
 
@@ -46,10 +46,10 @@
 
     <div class="content-header">
         <div class="form-group">
-            <label for="inputName">Project Name</label>
-            <input type="text" id="SearchWord" class="form-control">
+            <label for="inputName">Name/Email/Phone :</label>
+            <input type="text" id="SearchWord" class="form-control" >
         </div>
-        <input  type="button" value="Search" class="ui-button" id="search">
+        <input  type="button" value="Search Employees" class="ui-button" id="search">
         <table class="table">
             <thead>
                 <tr>

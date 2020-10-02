@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {}
+    "G:\\Projects\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {}
   },
   "projects": {
-    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {
+    "G:\\Projects\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
+        "projectUniqueName": "G:\\Projects\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
         "projectName": "RecruitmentApp",
-        "projectPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\obj\\",
+        "projectPath": "G:\\Projects\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
+        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
+        "outputPath": "G:\\Projects\\RecruitmentProject\\RecruitmentApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

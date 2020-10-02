@@ -225,7 +225,7 @@
                     type: "post",
                     data: JSON.stringify(obj),
                     contentType: "application/json",
-                    url: "https://localhost:44386/candidate/CreateApplication?id=" + candidateId + "&jobId=" + jobId,
+                    url: "/candidate/CreateApplication?id=" + candidateId + "&jobId=" + jobId,
                     success: function (res) {
                         alert("Job applied!");
                     }
@@ -238,7 +238,7 @@
                 var obj = { "jobId": jobId };
                 $.ajax({
                     type: "get",
-                    url: "https://localhost:44386/candidate/GetJobDescribtion?id=" + jobId,
+                    url: "/candidate/GetJobDescribtion?id=" + jobId,
                     success: function (res) {
                        
                         $("#pAlert").text(res);

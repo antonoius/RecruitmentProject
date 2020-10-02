@@ -26,7 +26,7 @@
 
             $.ajax({
                 type: "get",
-                url: "https://localhost:44386/api/department/"+compId,
+                url: "/api/department/"+compId,
                 success: function (res) {
                     $.each(res, function (idx, obj) {
                         $("tbody").append('<tr><td>#</td><td><a>' + obj + '</a></td><td class="project-actions text-right"><a class="btn btn-info btn-sm edt" href="#"><i class="fas fa-pencil-alt"></i> Edit</a></td></tr>');
@@ -60,7 +60,7 @@
                     type: "post",
                     data: JSON.stringify(obj),
                     contentType: "application/json",
-                    url: "https://localhost:44386/admin/DepartmentNameEdit?compId=" + compId + "&oldDepName=" + depNameBeforeEdit + "&newDepName=" + depName,
+                    url: "/admin/DepartmentNameEdit?compId=" + compId + "&oldDepName=" + depNameBeforeEdit + "&newDepName=" + depName,
                     success: function (res) {
                         ptr1.replaceWith('<a class="btn btn-info btn-sm edt" href="#"><i class="fas fa-pencil-alt"></i> Edit</a>');
                         ptr2.replaceWith('<a>' + depName + '</a>');

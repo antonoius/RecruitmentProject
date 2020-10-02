@@ -17,12 +17,23 @@
 
     <script>
         $(document).ready(function () {
+            $.ajax({
+                url: '/RecruiterOperations/getAllCandData',
+                success: function (result) {
+                    $.each($(result), function (i, elem) {
+
+                        $("tbody").append('<tr><td>' + elem.candName + '</td><td>' + elem.candPhone + ' </td> <td>' + elem.candEmail + '</td>  <td>' + elem.candLinkedIn + '</td> <td class="text-right py-0 align-middle"><div class= "btn-group btn-group-sm"><a href="/RecruiterOperations/ViewApplication?candId=' + elem.candId + '" class="btn btn-info"><i class="fas fa-eye"></i></a></div></td></tr>');
+                        // $("tbody").append('<tr><td>'+elem.departmentName+'</td><td><a href="ajax_edit.html?id='+elem.id+'">Edit</a></td><td><a href="ajax_delete.html?id='+elem.id+'">Delete</a></td></tr>')
+
+                    })
+                }
+            })
             $('#search').click(function () {
                 $("tbody").empty();
                 var searchWord = $('#SearchWord').val();
 
                 $.ajax({
-                    url: 'https://localhost:44386/RecruiterOperations/getCandData?searchWord=' + searchWord,
+                    url: '/RecruiterOperations/getCandData?searchWord=' + searchWord,
                     success: function (result) {
                         $.each($(result), function (i, elem) {
                             
@@ -45,10 +56,10 @@
 
     <div class="content-header">
         <div class="form-group">
-            <label for="inputName">Project Name</label>
+            <label for="inputName">Name/Email/Phone :</label>
             <input type="text" id="SearchWord" class="form-control">
         </div>
-        <input type="button" value="Search" class="ui-button" id="search">
+        <input type="button" value="Search Candidates" class="ui-button" id="search">
         <table class="table">
             <thead>
                 <tr>

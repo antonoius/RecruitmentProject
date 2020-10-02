@@ -27,7 +27,7 @@
             // Read from api
             $.ajax({
                 type: "get",
-                url: "https://localhost:44386/api/company",
+                url: "/api/company",
                 success: function (res) {
                     $.each(res, function (idx, obj) {
                         mp.set(obj.companyName, obj.id);
@@ -55,7 +55,7 @@
                     type: "post",
                     data: JSON.stringify(obj),
                     contentType: "application/json",
-                    url: "https://localhost:44386/admin/CompanyNameEdit?id=" + compId + "&newCompName=" + compName + "",
+                    url: "/admin/CompanyNameEdit?id=" + compId + "&newCompName=" + compName + "",
                     success: function (res) {
                         ptr1.replaceWith('<a class="btn btn-info btn-sm edt" href="#"><i class="fas fa-pencil-alt"></i> Edit</a>');
                         ptr2.replaceWith('<a>' + compName + '</a>');
@@ -78,7 +78,7 @@
                 var ptr = $(this).parent().parent();
                 $.ajax({
                     type: "post",
-                    url: "https://localhost:44386/admin/DeleteHRDirctorAccess?empId="+empId,
+                    url: "/admin/DeleteHRDirctorAccess?empId="+empId,
                     success: function (res) {
                         ptr.remove();
                     }
