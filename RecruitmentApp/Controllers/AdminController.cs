@@ -14,18 +14,28 @@ namespace RecruitmentApp.Controllers
         private readonly ICompanyRepo compRep;
         private readonly IEmployeeRepo empRep;
         private readonly IEmployeeLoginDataRepo eldRep;
+        private readonly ICompanyDepartmentRepo compDepRep;
 
-        public AdminController(ICompanyRepo compRep, IEmployeeRepo empRep,IEmployeeLoginDataRepo eldRep)
+        public AdminController(ICompanyRepo compRep, IEmployeeRepo empRep,IEmployeeLoginDataRepo eldRep, ICompanyDepartmentRepo compDepRep)
         {
             this.compRep = compRep;
             this.empRep = empRep;
             this.eldRep = eldRep;
+            this.compDepRep = compDepRep;
         }
 
 
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public void CompanyNameEdit(int id, string newCompName)  // api
+        {
+
+            compRep.EditCompay(id, newCompName);
+
         }
 
         public IActionResult HRDirectorCreation()
@@ -82,34 +92,47 @@ namespace RecruitmentApp.Controllers
             return RedirectToAction("index", "admin");
         }
 
-        public IActionResult DepartmentsDisplay(CompanyCreationVM comp)
+
+       
+        
+        public IActionResult DepartmentsDisplay()
         {
             return View();
         }
 
-        public IActionResult CompanyEdit(CompanyCreationVM comp)
+
+       
+        public IActionResult DepartmentCreation()
         {
             return View();
         }
 
-        public IActionResult CompanyDelete(CompanyCreationVM comp)
+
+        [HttpPost]
+        public void DepartmentNameEdit(int compId, string oldDepName, string newDepName)
         {
-            return View();
+            compDepRep.EditCompanyDepartment(compId, oldDepName, newDepName);
         }
 
-        public IActionResult HRDirectorDisplay(CompanyCreationVM comp)
+
+
+        [HttpPost]
+        public void DepartmentCreationService(int compId, string depName) // api
         {
-            return View();
+            Lk_Company_Department cd = new Lk_Company_Department();
+            cd.CompanyId = compId;
+            cd.DepartmentName = depName;
+            compDepRep.AddCompanyDepartment(cd);
         }
 
-        public IActionResult HRDirectorEdit(CompanyCreationVM comp)
+
+        [HttpPost]
+        public void DeleteHRDirctorAccess(int empId)
         {
-            return View();
+            empRep.UpdateEmployeeType(empId, 4);
+            empRep.DeleteEmployeeLoginData(empId);
+
         }
 
-        public IActionResult HRDirectorDelete(CompanyCreationVM comp)
-        {
-            return View();
-        }
     }
 }

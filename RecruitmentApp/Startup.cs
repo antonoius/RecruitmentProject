@@ -33,7 +33,7 @@ namespace RecruitmentApp
             services.AddScoped<ICandidateRepo, CandidateRepo>();
             services.AddScoped<ICompanyRepo, CompanyRepo>();
             services.AddScoped<IEmployeeRepo, EmployeeRepo>();
-
+            services.AddScoped<ICompanyDepartmentRepo, CompanyDepartmentRepo>();
 
 
         }
@@ -50,9 +50,10 @@ namespace RecruitmentApp
 
             app.UseStaticFiles();
 
-            app.UseEndpoints(a => a.MapDefaultControllerRoute());
 
-            app.UseEndpoints(a => a.MapControllerRoute(name:"myAreas",pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"));
+            app.UseEndpoints(a => a.MapControllerRoute(name: "myAreas", pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"));
+
+            app.UseEndpoints(a => a.MapDefaultControllerRoute());
 
             app.UseEndpoints(endpoints =>
             {

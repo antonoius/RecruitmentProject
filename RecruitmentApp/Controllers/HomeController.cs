@@ -12,5 +12,6 @@ namespace RecruitmentApp.Controllers
         {
             return View();
         }
+        
     }
 }

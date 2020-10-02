@@ -9,9 +9,10 @@ namespace RecruitmentApp.Repository
     public interface ICompanyDepartmentRepo
     {
         bool AddCompanyDepartment(Lk_Company_Department companyDepartment);
-        
-        bool EditCompanyDepartment(Lk_Company_Department newCompanyDepartment);
-        
+
+        bool EditCompanyDepartment(int compId, string oldDepName, string newDepName);
+
+
         bool DeleteCompanyDepartment(Lk_Company_Department companyDepartment);
         
     }

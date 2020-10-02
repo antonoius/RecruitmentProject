@@ -62,5 +62,39 @@ namespace RecruitmentApp.Repository
         {
             return db.Employees.Where(a => a.EmployeeTypeId == 2);
         }
+
+        public bool UpdateEmployeeType(int empId, int type)
+        {
+            try
+            {
+                var emp = db.Employees.Find(empId);
+                emp.EmployeeTypeId = type;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+
+        public bool DeleteEmployeeLoginData(int empId)
+        {
+            try
+            {
+                var ld = db.EmployeeLoginDatas.Find(empId);
+                db.EmployeeLoginDatas.Remove(ld);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
     }
 }

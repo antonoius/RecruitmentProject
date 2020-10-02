@@ -393,8 +393,6 @@ E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.csprojAssemblyReference.cache
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.AssemblyInfoInputs.cache
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.AssemblyInfo.cs
-E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.csproj.CoreCompileInputs.cache
-E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.MvcApplicationPartsAssemblyInfo.cache
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.RazorAssemblyInfo.cache
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.RazorAssemblyInfo.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.TagHelpers.input.cache
@@ -402,7 +400,6 @@ E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.RazorCoreGenerate.cache
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\CompanyCreation.cshtml.g.cs
-E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DepartmentsDisplay.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\HRDirectorCreation.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
@@ -416,3 +413,14 @@ E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.dll
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.pdb
 E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.genruntimeconfig.cache
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.csproj.CoreCompileInputs.cache
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\RecruitmentApp.MvcApplicationPartsAssemblyInfo.cache
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DepartmentsDisplay.cshtml.g.cs
+E:\Internship\ProjectGIT\RecruitmentProject\RecruitmentApp\obj\Debug\netcoreapp3.1\Razor\Views\Admin\DepartmentCreation.cshtml.g.cs

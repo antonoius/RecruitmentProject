@@ -46,14 +46,23 @@ namespace RecruitmentApp.Repository
             }
         }
 
-        public bool EditCompanyDepartment(Lk_Company_Department newCompanyDepartment)
+        public bool EditCompanyDepartment(int compId, string oldDepName, string newDepName)
         {
             try
             {
-                var oldData = db.CompanyDepartments.Find(newCompanyDepartment.CompanyId, newCompanyDepartment.DepartmentName);
-                oldData = newCompanyDepartment;
+
+                var cd = db.CompanyDepartments.Find(compId, oldDepName);
+                db.CompanyDepartments.Remove(cd);
                 db.SaveChanges();
+
+                Lk_Company_Department cd2 = new Lk_Company_Department(); 
+                cd2.CompanyId = compId;
+                cd2.DepartmentName = newDepName;
+                db.CompanyDepartments.Add(cd2);
+                db.SaveChanges();
+                
                 return true;
+                
             }
             catch (Exception e)
             {

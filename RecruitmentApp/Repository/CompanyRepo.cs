@@ -47,12 +47,13 @@ namespace RecruitmentApp.Repository
             }
         }
 
-        public bool EditCompay(Lk_Company newCompany)
+
+        public bool EditCompay(int id, string newCompName)
         {
             try
             {
-                var oldData = db.Companies.Find(newCompany.Id);
-                oldData = newCompany;
+                var oldData = db.Companies.SingleOrDefault(a => a.Id == id);
+                oldData.CompanyName = newCompName;
                 db.SaveChanges();
                 return true;
             }
@@ -61,6 +62,7 @@ namespace RecruitmentApp.Repository
                 Console.WriteLine(e.Message);
                 return false;
             }
+
         }
 
 
@@ -73,6 +75,18 @@ namespace RecruitmentApp.Repository
         public IEnumerable<Lk_Company> GetAllCompanies()
         {
             return db.Companies.Select(a => a);
+        }
+
+        public Lk_Company GetCompany(int Id)
+        {
+            return db.Companies.Find(Id);
+        }
+
+
+        public IEnumerable<string> GetCompanyDepartments(int id)
+        {
+            return db.CompanyDepartments.Where(a => a.CompanyId == id).Select(a => a.DepartmentName);
+
         }
 
     }

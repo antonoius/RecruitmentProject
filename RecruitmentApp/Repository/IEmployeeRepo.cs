@@ -18,5 +18,9 @@ namespace RecruitmentApp.Repository
         Op_Employee GetEmployee(string email, string phone, string linkedInAccount);
 
         IEnumerable<Op_Employee> GetAllHRDirectors();
+
+        bool UpdateEmployeeType(int empId, int type);
+
+        bool DeleteEmployeeLoginData(int empId);
     }
 }

@@ -22,8 +22,71 @@
     <script src="~/lib/jquery/jquery.min.js"></script>
 
     <script>
+        $(function () {
+            var mp = new Map(); // is used to get the id when we know the CompanyName
+            // Read from api
+            $.ajax({
+                type: "get",
+                url: "https://localhost:44386/api/company",
+                success: function (res) {
+                    $.each(res, function (idx, obj) {
+                        mp.set(obj.companyName, obj.id);
+                    });
+                }
+            });
+            // Edit company name
+            var compNameBeforeEdit;
+            $("#tbody1").on("click", ".edt", function () {
+                var compName = $(this).parent().prev().children().text();
+                compNameBeforeEdit = compName;
+                $(this).parent().prev().replaceWith('<td> <input type="text" value="' + compName + '"> </td> ');
+                //$(this).replaceWith('<input type="button" value="Save" class="save">');
+                $(this).replaceWith('<a class="btn btn-info btn-sm save" href="#"> <i class="fas fa-pencil-alt"></i> Save Changes</a>');
+            });
 
-       
+            // Save
+            $("#tbody1").on("click", ".save", function () {
+                var compName = $(this).parent().prev().find("input").val();
+                var compId = mp.get(compNameBeforeEdit);
+                var ptr1 = $(this);
+                var ptr2 = $(this).parent().prev().children();
+                var obj = { "id": compId, "newCompName": compName};
+                $.ajax({
+                    type: "post",
+                    data: JSON.stringify(obj),
+                    contentType: "application/json",
+                    url: "https://localhost:44386/admin/CompanyNameEdit?id=" + compId + "&newCompName=" + compName + "",
+                    success: function (res) {
+                        ptr1.replaceWith('<a class="btn btn-info btn-sm edt" href="#"><i class="fas fa-pencil-alt"></i> Edit</a>');
+                        ptr2.replaceWith('<a>' + compName + '</a>');
+                        mp.delete(compNameBeforeEdit);
+                        mp.set(compName, compId);
+                    }
+                });
+            });
+
+            // a company departments
+            $("#tbody1").on("click", ".dep", function () {
+                var compName = $(this).parent().prev().children().text();
+                var compId = mp.get(compName);
+                window.location.replace("/Admin/DepartmentsDisplay?id="+compId);
+            });
+
+            // Delete access HR Director
+            $("#tbody2").on("click", ".del", function () {
+                var empId = $(this).parent().prev().prev().prev().prev().text();
+                var ptr = $(this).parent().parent();
+                $.ajax({
+                    type: "post",
+                    url: "https://localhost:44386/admin/DeleteHRDirctorAccess?empId="+empId,
+                    success: function (res) {
+                        ptr.remove();
+                    }
+                });
+            });
+
+        });
+
     </script>
 
 </head>
@@ -117,11 +180,6 @@
                                                 </i>
                                                 Edit
                                             </a>
-                                            <a class="btn btn-danger btn-sm del" href="#">
-                                                <i class="fas fa-trash">
-                                                </i>
-                                                Delete
-                                            </a>
                                         </td>
                                     </tr>
                                 }
@@ -149,59 +207,59 @@
                         <table class="table table-striped projects">
                             <thead>
                                 <tr>
-                                    <th style="width: 1%">
-                                        #
+                                    <th style="width: 10%">
+                                        ID
                                     </th>
-                                    <th style="width: 70%">
+                                    <th style="width: 20%">
                                         HR Director Name
+                                    </th>
+                                    <th style="width: 30%">
+                                        HR Director Email
+                                    </th>
+                                    <th style="width: 20%">
+                                        HR Director Company
                                     </th>
                                     <th style="width: 20%">
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
-
-
+                            <tbody id="tbody2">
+                                
                                 @inject RecruitmentApp.Repository.IEmployeeRepo empRep
-
+                                
+                                @inject RecruitmentApp.Repository.ICompanyRepo compRep
+                                
                                 @foreach (var item in empRep.GetAllHRDirectors())
                                 {
+                                <tr>
+                                    <td>
+                                        @item.Id
+                                    </td>
+                                    <td>
+                                        <a>
+                                            @item.Name
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a>
+                                            @item.Email
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a>
+                                            @compRep.GetCompany(item.CompanyId).CompanyName  
+                                        </a>
+                                    </td>
 
-                                    <tr>
-                                        <td>
-                                            #
-                                        </td>
-                                        <td>
-                                            <a>
-                                                @item.Name
-                                            </a>
-                                        </td>
-
-                                        <td class="project-actions text-right">
-                                            <a class="btn btn-primary btn-sm" href="#">
-                                                <i class="fas fa-folder">
-                                                </i>
-                                                View
-                                            </a>
-                                            <a class="btn btn-info btn-sm" href="#">
-                                                <i class="fas fa-pencil-alt">
-                                                </i>
-                                                Edit
-                                            </a>
-                                            <a class="btn btn-danger btn-sm" href="#">
-                                                <i class="fas fa-trash">
-                                                </i>
-                                                Delete
-                                            </a>
-                                        </td>
-                                    </tr>
-
-
-
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-danger btn-sm del" href="#">
+                                            <i class="fas fa-trash">
+                                            </i>
+                                            Delete
+                                        </a>
+                                    </td>
+                                </tr>
                                 }
-
-
-
                             </tbody>
                         </table>
                     </div>
