@@ -62,5 +62,22 @@ namespace RecruitmentApp.Repository
                 return false;
             }
         }
+        public string GetJobName(int JobId)
+        {
+            var job = db.Jobs.SingleOrDefault(a => a.Id == JobId);
+            return job.Position;
+        }
+
+        public IEnumerable<Op_Jobs> GetAllJobs()
+        {
+            return db.Jobs.Select(j => j);
+        }
+
+        public string GetJobDescription(int jobId)
+        {
+            var job = db.Jobs.SingleOrDefault(a => a.Id == jobId);
+
+            return job.JobDescribtion;
+        }
     }
 }

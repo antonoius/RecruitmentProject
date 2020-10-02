@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 
 namespace RecruitmentApp.Repository
@@ -14,6 +15,9 @@ namespace RecruitmentApp.Repository
         bool EditJob(Op_Jobs newJob);
         
         bool DeleteJob(Op_Jobs job);
+        string GetJobName(int jobId);
+        string GetJobDescription(int jobId);
+        IEnumerable<Op_Jobs> GetAllJobs();
 
 
     }

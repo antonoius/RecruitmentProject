@@ -69,11 +69,16 @@ namespace RecruitmentApp.Repository
             var comp = db.Companies.SingleOrDefault(a => a.CompanyName == companyName);
             return comp.Id;
         }
-
+        public string GetCompanyName(int companyId)
+        {
+            var comp = db.Companies.SingleOrDefault(a => a.Id == companyId);
+            return comp.CompanyName;
+        }
         public IEnumerable<Lk_Company> GetAllCompanies()
         {
             return db.Companies.Select(a => a);
         }
 
+       
     }
 }

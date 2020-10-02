@@ -33,6 +33,12 @@ namespace RecruitmentApp
             services.AddScoped<ICandidateRepo, CandidateRepo>();
             services.AddScoped<ICompanyRepo, CompanyRepo>();
             services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+            services.AddScoped<IJobsRepo, JobsRepo>();
+            services.AddScoped<IApplicationRepo, ApplicationRepo>();
+
+            services.AddSession();
+
+
 
 
 
@@ -47,6 +53,8 @@ namespace RecruitmentApp
             }
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseStaticFiles();
 

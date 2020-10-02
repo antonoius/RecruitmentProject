@@ -12,6 +12,7 @@ namespace RecruitmentApp.Repository
         bool EditCompay(Lk_Company newCompany);
         bool DeleteCompany(Lk_Company company);
         int GetCompanyId(string companyName);
+        string GetCompanyName(int companyId);
         IEnumerable<Lk_Company> GetAllCompanies();
     }
 }

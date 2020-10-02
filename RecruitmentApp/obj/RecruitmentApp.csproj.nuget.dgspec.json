@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {}
+    "C:\\Users\\Ziad\\Desktop\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {}
   },
   "projects": {
-    "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {
+    "C:\\Users\\Ziad\\Desktop\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
+        "projectUniqueName": "C:\\Users\\Ziad\\Desktop\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
         "projectName": "RecruitmentApp",
-        "projectPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\Internship\\ProjectGIT\\RecruitmentProject\\RecruitmentApp\\obj\\",
+        "projectPath": "C:\\Users\\Ziad\\Desktop\\RecruitmentProject\\RecruitmentApp\\RecruitmentApp.csproj",
+        "packagesPath": "C:\\Users\\Ziad\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ziad\\Desktop\\RecruitmentProject\\RecruitmentApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ziad\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,6 +41,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -75,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
